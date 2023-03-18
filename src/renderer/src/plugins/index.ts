@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import { App } from 'vue'
 import setupPinia from './pinia'
+import setupElementPlus from './elementplus'
 
 /**
  * 自动注册组件
@@ -17,4 +18,5 @@ const autoRegisterComponet = (app: App): void => {
 export const setupPlugins = (app: App): void => {
   autoRegisterComponet(app)
   setupPinia(app)
+  setupElementPlus(app)
 }

@@ -24,6 +24,7 @@
     "@electron-toolkit/utils": "^1.0.2",
     "@types/lodash": "^4.14.191",
     "electron-updater": "^5.3.0",
+    "element-plus": "^2.3.0",
     "lodash": "^4.17.21",
     "pinia": "^2.0.33",
     "pinia-plugin-persistedstate": "^3.1.0",
