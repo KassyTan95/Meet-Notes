@@ -1,5 +1,11 @@
 
 
+
+<script lang="ts" setup>
+
+</script>
+
+
 <template>
   <main class="main">
     
@@ -7,6 +13,7 @@
       <div class="flex items-center justify-center h-12 avatar">
         <me theme="filled" size="40" fill="#333" :strokeWidth="3" />
       </div>
+
 
       <div class="flex items-center justify-center refresh">
         <refresh theme="outline" size="16" fill="#333" :strokeWidth="3" />
@@ -39,6 +46,7 @@
           <recycle-bin theme="outline" size="16" fill="#333" :strokeWidth="3" />
         </div>
       </div>
+
     </div>
 
     <div class="content-box">
@@ -47,7 +55,9 @@
         <div class="content">3333</div>
       </div>
 
-      <div class="footer">444</div>
+      <div class="footer">
+        <Footer />
+      </div>
     </div>
   </main>
 </template>
@@ -65,8 +75,9 @@ import {
   ShareTwo,
   RecycleBin
 } from '@icon-park/vue-next'
+import Footer from '@renderer/views/layout/components/footer/index.vue'
 
-const a = '1231'
+const a = '1111'
 
 function new_file() {
   console.log('asdfsdf')
@@ -116,7 +127,7 @@ function new_file() {
     }
 
     .footer {
-      @apply bg-purple-300 flex-1;
+      @apply flex-1;
     }
   }
 }
