@@ -7,6 +7,7 @@
     <div class="flex flex-col items-center asside">
         <div class="flex items-center justify-center h-12 avatar">
           <me theme="filled" size="40" fill="#333" :strokeWidth="3"/>
+          
 
         </div>
     </div>
