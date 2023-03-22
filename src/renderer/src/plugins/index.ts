@@ -3,6 +3,7 @@ import { App } from 'vue'
 import setupPinia from './pinia'
 import setupElementPlus from './elementplus'
 import setupIconPark from './iconpark'
+import setupQuasar from './quasar'
 
 /**
  * 自动注册组件
@@ -21,4 +22,5 @@ export const setupPlugins = (app: App): void => {
   setupPinia(app)
   setupIconPark(app)
   setupElementPlus(app)
+  setupQuasar(app)
 }
