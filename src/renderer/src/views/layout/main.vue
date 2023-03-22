@@ -56,18 +56,7 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  Me,
-  Refresh,
-  Plus,
-  Calendar,
-  CheckOne,
-  HighSpeedRail,
-  ApplicationMenu,
-  DocumentFolder,
-  ShareTwo,
-  RecycleBin
-} from '@icon-park/vue-next'
+
 import Footer from '@renderer/views/layout/components/footer/index.vue'
 
 const a = '1111'
