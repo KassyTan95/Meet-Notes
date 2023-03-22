@@ -1,1 +1,10 @@
 @import './reset.css';
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+.g-pointer {
+  cursor: pointer;
+}

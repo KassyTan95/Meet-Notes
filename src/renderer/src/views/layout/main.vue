@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-  import { Me } from '@icon-park/vue-next';
+import { Me } from '@icon-park/vue-next'
+import Footer from '@renderer/views/layout/components/footer/index.vue'
 </script>
 
 <template>
   <main class="main">
     <div class="flex flex-col items-center asside">
-        <div class="flex items-center justify-center h-12 avatar">
-          <me theme="filled" size="40" fill="#333" :strokeWidth="3"/>
-
-        </div>
+      <div class="flex items-center justify-center h-12 avatar">
+        <me theme="filled" size="40" fill="#333" :strokeWidth="3" />
+      </div>
     </div>
 
     <div class="content-box">
@@ -17,7 +17,9 @@
         <div class="content">333</div>
       </div>
 
-      <div class="footer">444</div>
+      <div class="footer">
+        <Footer />
+      </div>
     </div>
   </main>
 </template>
@@ -50,7 +52,7 @@
     }
 
     .footer {
-      @apply bg-purple-300 flex-1;
+      @apply flex-1;
     }
   }
 }
