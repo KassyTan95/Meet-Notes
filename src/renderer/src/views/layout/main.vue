@@ -1,45 +1,40 @@
-
 <template>
   <main class="main">
-    
     <div class="flex flex-col items-center asside">
       <div class="flex items-center justify-center h-12 avatar">
-        <me theme="filled" size="40" fill="#333" :strokeWidth="3" />
+        <me theme="filled" size="40" fill="#333" :stroke-width="3" />
       </div>
 
-
       <div class="flex items-center justify-center refresh">
-        <refresh theme="outline" size="16" fill="#333" :strokeWidth="3" />
+        <refresh theme="outline" size="16" fill="#333" :stroke-width="3" />
       </div>
 
       <div class="flex flex-col items-center side-button-group">
         <div class="button-group-item-active button-group-item" @click="new_file">
-          <plus theme="outline" size="20" fill="#fff" :strokeWidth="5" />
-          
+          <plus theme="outline" size="20" fill="#fff" :stroke-width="5" />
         </div>
         <div class="button-group-item">
-          <calendar theme="outline" size="16" fill="#333" :strokeWidth="3" />
+          <calendar theme="outline" size="16" fill="#333" :stroke-width="3" />
         </div>
         <div class="button-group-item">
-          <check-one theme="outline" size="16" fill="#333" :strokeWidth="3" />
+          <check-one theme="outline" size="16" fill="#333" :stroke-width="3" />
         </div>
         <div class="button-group-item">
-          <high-speed-rail theme="outline" size="16" fill="#333" :strokeWidth="3" />
+          <high-speed-rail theme="outline" size="16" fill="#333" :stroke-width="3" />
         </div>
         <div class="button-group-item">
-          <application-menu theme="outline" size="16" fill="#333" :strokeWidth="3" />
+          <application-menu theme="outline" size="16" fill="#333" :stroke-width="3" />
         </div>
         <div class="button-group-item">
-          <document-folder theme="outline" size="16" fill="#333" :strokeWidth="3" />
+          <document-folder theme="outline" size="16" fill="#333" :stroke-width="3" />
         </div>
         <div class="button-group-item">
-          <share-two theme="outline" size="16" fill="#333" :strokeWidth="3" />
+          <share-two theme="outline" size="16" fill="#333" :stroke-width="3" />
         </div>
         <div class="button-group-item">
-          <recycle-bin theme="outline" size="16" fill="#333" :strokeWidth="3" />
+          <recycle-bin theme="outline" size="16" fill="#333" :stroke-width="3" />
         </div>
       </div>
-
     </div>
 
     <div class="content-box">
@@ -56,7 +51,6 @@
 </template>
 
 <script lang="ts" setup>
-
 import Footer from '@renderer/views/layout/components/footer/index.vue'
 
 const a = '1111'
@@ -81,7 +75,7 @@ function new_file() {
     .side-button-group {
       .button-group-item {
         @apply h-[40px] w-[40px] flex items-center justify-center my-1 rounded-sm
-        hover:bg-gray-100	bg-opacity-100 cursor-pointer	
+        hover:bg-gray-100	bg-opacity-100 cursor-pointer
         active:bg-green-700;
       }
 
