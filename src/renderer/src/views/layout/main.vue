@@ -20,6 +20,9 @@
 </template>
 
 <script lang="ts" setup>
+import Asside from '@renderer/views/layout/components/asside/index.vue'
+import List from '@renderer/views/layout/components/list/index.vue'
+import Note from '@renderer/views/layout/components/note/index.vue'
 import Footer from '@renderer/views/layout/components/footer/index.vue'
 </script>
 
