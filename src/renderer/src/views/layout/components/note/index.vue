@@ -14,14 +14,13 @@ let instance
 
 
 onMounted(() => {
-  
     init()
 })
 
 function init() {
 
     instance = new Vditor(editorRef.value, {
-        height: 720,
+        height: "100%",
         mode: 'sv',
         toolbarConfig: {
             pin: true
