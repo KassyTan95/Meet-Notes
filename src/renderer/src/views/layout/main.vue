@@ -5,7 +5,9 @@
     <div class="content-box">
       <div class="body">
         <div class="list">22222</div>
-        <div class="content">3333</div>
+        <div class="content">
+          <Note></Note>
+        </div>
       </div>
 
       <div class="footer">
@@ -18,6 +20,7 @@
 <script lang="ts" setup>
 import Footer from '@renderer/views/layout/components/footer/index.vue'
 import Asside from '@renderer/views/layout/components/asside/index.vue'
+import Note from '@renderer/views/layout/components/note/index.vue'
 
 </script>
 
@@ -39,7 +42,7 @@ import Asside from '@renderer/views/layout/components/asside/index.vue'
       }
 
       .content {
-        @apply h-full flex-1 bg-yellow-600;
+        @apply w-full
       }
     }
 
