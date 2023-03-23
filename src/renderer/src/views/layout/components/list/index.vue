@@ -1,9 +1,20 @@
 <script lang="ts" setup>
 import type { ListData } from '@renderer/types/layout/list'
-import { reactive } from 'vue'
+import { reactive, ref, onMounted } from 'vue'
 
 const data = reactive<ListData>({
-  isFocus: false
+  isFocus: false,
+  heavyList: [] as any[]
+})
+
+const maxSize = 10000
+
+onMounted(() => {
+  for (let i = 0; i < maxSize; i++) {
+    data.heavyList.push({
+      label: 'Option ' + (i + 1)
+    })
+  }
 })
 </script>
 
@@ -18,15 +29,12 @@ const data = reactive<ListData>({
         <sort-amount-down class="icon" />
       </div>
     </div>
-    <div class="row-box">
-      <div class="row-item"></div>
-      <div class="row-item"></div>
-      <div class="row-item"></div>
-      <div class="row-item"></div>
-      <div class="row-item"></div>
-      <div class="row-item"></div>
-      <div class="row-item"></div>
-    </div>
+
+    <q-virtual-scroll class="row-box hide-scrollbar" :items="data.heavyList" separator v-slot="{ item, index }">
+      <q-item :key="index" dense>
+        <div class="row-item">{{ index }}</div>
+      </q-item>
+    </q-virtual-scroll>
   </div>
 </template>
 
@@ -55,10 +63,10 @@ const data = reactive<ListData>({
   }
 
   .row-box {
-    @apply flex-1 bg-pink-200 p-[5px] overflow-auto;
+    @apply flex-1 p-[5px] overflow-auto;
 
     .row-item {
-      @apply w-full h-[130px] bg-white border-b-[1px];
+      @apply w-full h-[130px] bg-white;
     }
   }
 
