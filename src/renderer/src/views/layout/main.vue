@@ -28,7 +28,7 @@ import Note from '@renderer/views/layout/components/note/index.vue'
 .main {
   @apply flex;
 
-  
+
 
   .content-box {
     @apply flex flex-1 flex-col;
