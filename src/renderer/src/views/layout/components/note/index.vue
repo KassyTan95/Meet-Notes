@@ -21,7 +21,7 @@ function init() {
 
     instance = new Vditor(editorRef.value, {
         height: "100%",
-        mode: 'sv',
+        mode: 'ir', // wysiwyg, ir, sv
         toolbarConfig: {
             pin: true
         },
