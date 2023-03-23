@@ -1,0 +1,69 @@
+.<template>
+  <div class="flex flex-col items-center asside">
+    <div class="flex items-center justify-center h-12 avatar">
+      <me theme="filled" size="40" fill="#333" :stroke-width="3" />
+    </div>
+
+    <div class="flex items-center justify-center refresh">
+      <refresh theme="outline" size="16" fill="#333" :stroke-width="3" />
+    </div>
+
+    <div class="flex flex-col items-center side-button-group">
+      <div class="button-group-item-active button-group-item" @click="new_file">
+        <plus theme="outline" size="20" fill="#fff" :stroke-width="5" />
+      </div>
+      <div class="button-group-item">
+        <calendar theme="outline" size="16" fill="#333" :stroke-width="3" />
+      </div>
+      <div class="button-group-item">
+        <check-one theme="outline" size="16" fill="#333" :stroke-width="3" />
+      </div>
+      <div class="button-group-item">
+        <high-speed-rail theme="outline" size="16" fill="#333" :stroke-width="3" />
+      </div>
+      <div class="button-group-item">
+        <application-menu theme="outline" size="16" fill="#333" :stroke-width="3" />
+      </div>
+      <div class="button-group-item">
+        <document-folder theme="outline" size="16" fill="#333" :stroke-width="3" />
+      </div>
+      <div class="button-group-item">
+        <share-two theme="outline" size="16" fill="#333" :stroke-width="3" />
+      </div>
+      <div class="button-group-item">
+        <recycle-bin theme="outline" size="16" fill="#333" :stroke-width="3" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+
+function new_file() {
+  console.log('asdfsdf')
+}
+</script>
+
+<style lang="scss" scoped>
+.asside {
+  @apply w-[75px] h-screen;
+  .avatar {
+    @apply w-full;
+  }
+  .refresh {
+    @apply h-[40px] w-[40px] bg-gray-100 rounded-sm;
+  }
+  .side-button-group {
+    .button-group-item {
+      @apply h-[40px] w-[40px] flex items-center justify-center my-1 rounded-sm
+        hover:bg-gray-100	bg-opacity-100 cursor-pointer
+        active:bg-green-700;
+    }
+
+    .button-group-item-active {
+      @apply bg-green-700
+        hover:bg-green-600;
+    }
+  }
+}
+</style>
