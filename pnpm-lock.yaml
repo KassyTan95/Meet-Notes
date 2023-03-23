@@ -31,6 +31,7 @@ specifiers:
   sass: ^1.32.12
   tailwindcss: ^3.2.7
   typescript: ^4.9.5
+  vditor: ^3.9.1
   vite: ^4.1.4
   vue: ^3.2.47
   vue-router: ^4.1.6
@@ -48,6 +49,7 @@ dependencies:
   pinia: 2.0.33_hmuptsblhheur2tugfgucj7gc4
   pinia-plugin-persistedstate: 3.1.0_pinia@2.0.33
   quasar: 2.11.8
+  vditor: 3.9.1
   vue-router: 4.1.6_vue@3.2.47
 
 devDependencies:
@@ -1798,6 +1800,10 @@ packages:
   /didyoumean/1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
     dev: true
+
+  /diff-match-patch/1.0.5:
+    resolution: {integrity: sha512-IayShXAgj/QMXgB0IWmKx+rOPuGMhqm5w6jvFxmVenXKIzRqTAAsbBPT3kWQeGANj3jGgvcvv4yK6SxqYmikgw==}
+    dev: false
 
   /dir-compare/2.4.0:
     resolution: {integrity: sha512-l9hmu8x/rjVC9Z2zmGzkhOEowZvW7pmYws5CWHutg8u1JgvsKWMx7Q/UODeu4djLZ4FgW5besw5yvMQnBHzuCA==}
@@ -3739,6 +3745,12 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
+
+  /vditor/3.9.1:
+    resolution: {integrity: sha512-pu9+4duq/RPftiGas9QCxy8FwwFx2jPEZd2/xKIsI8BMUzwKL5M65LH0cAkmrSUwZSXACLBWGM3RYahK5n1CUA==}
+    dependencies:
+      diff-match-patch: 1.0.5
+    dev: false
 
   /verror/1.10.1:
     resolution: {integrity: sha512-veufcmxri4e3XSrT0xwfUR7kguIkaxBeosDg00yDWhk49wdwkSUrvvsm7nc75e1PUyvIeZj6nS8VQRYz2/S4Xg==}

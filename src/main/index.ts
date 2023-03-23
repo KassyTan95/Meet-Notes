@@ -2,6 +2,9 @@ import { app, shell, BrowserWindow } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+// const { session } = require('electron')
+
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true'
 
 function createWindow(): void {
   // Create the browser window.
@@ -23,6 +26,8 @@ function createWindow(): void {
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
+
+    
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
@@ -54,6 +59,15 @@ app.whenReady().then(() => {
   })
 
   createWindow()
+
+  // session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+  //   callback({
+  //     responseHeaders: {
+  //       ...details.responseHeaders,
+  //       'Content-Security-Policy': ['\'default-src\' \'self\' \'script-src\' \'self\' \'style-src\' \'self\' \'unsafe-inline\' \'unsafe-eval\' https://unpkg.com']
+  //     }
+  //   })
+  // })
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
