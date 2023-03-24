@@ -4,10 +4,10 @@ import { onMounted, reactive } from 'vue'
 
 const data = reactive<ListData>({
   isFocus: false,
-  heavyList: [] as any[]
+  heavyList: []
 })
 
-const maxSize = 10000
+const maxSize = 100
 
 onMounted(() => {
   for (let i = 0; i < maxSize; i++) {
@@ -30,7 +30,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <q-virtual-scroll v-slot="{ index }" class="row-box hide-scrollbar" :items="data.heavyList" separator>
+    <q-virtual-scroll v-slot="{ index }" class="row-box scrollbar" :items="data.heavyList" separator>
       <q-item :key="index" dense>
         <div class="row-item">{{ index }}</div>
       </q-item>
@@ -46,7 +46,7 @@ onMounted(() => {
     @apply flex justify-center items-center h-[65px] p-[5px];
 
     .search {
-      @apply w-[222px] h-[30px] flex items-center rounded-md border-[1px] border-[#f4f6f7] bg-[#f4f6f7] pl-1 pr-1;
+      @apply w-[222px] h-[30px] flex items-center rounded-md border-[1px] border-[#f4f6f7] bg-[#f4f6f7] pl-1 pr-1 duration-500;
 
       input {
         @apply w-full text-[12px] text-gray-500 bg-[#f4f6f7] ml-0.5;
@@ -54,7 +54,7 @@ onMounted(() => {
     }
 
     .active {
-      @apply border-[1px] border-[#6588f6];
+      @apply border-[1px] border-[#6588f6] duration-700;
     }
 
     .sort {
@@ -63,10 +63,10 @@ onMounted(() => {
   }
 
   .row-box {
-    @apply flex-1 p-[5px] overflow-auto;
+    @apply flex-1 p-[5px] overflow-y-auto;
 
     .row-item {
-      @apply w-full h-[130px] bg-white;
+      @apply w-full h-[120px] bg-white;
     }
   }
 
