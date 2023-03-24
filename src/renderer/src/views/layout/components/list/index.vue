@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { ListData } from '@renderer/types/layout/list'
-import { reactive, ref, onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 
 const data = reactive<ListData>({
   isFocus: false,
@@ -30,7 +30,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <q-virtual-scroll class="row-box hide-scrollbar" :items="data.heavyList" separator v-slot="{ item, index }">
+    <q-virtual-scroll v-slot="{ index }" class="row-box hide-scrollbar" :items="data.heavyList" separator>
       <q-item :key="index" dense>
         <div class="row-item">{{ index }}</div>
       </q-item>
