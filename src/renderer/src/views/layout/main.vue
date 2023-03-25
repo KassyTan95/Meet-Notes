@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <Asside></Asside>
+    <Asside />
 
     <div class="content-box">
       <div class="body">
@@ -8,7 +8,7 @@
           <List />
         </div>
         <div class="content">
-          <Note></Note>
+          <Note />
         </div>
       </div>
 

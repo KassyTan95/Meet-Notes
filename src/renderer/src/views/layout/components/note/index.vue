@@ -1,47 +1,40 @@
 <template>
-    <div class="note" ref="editorRef"></div>
+  <div class="note" ref="editorRef"></div>
 </template>
-  
-<script lang="ts" setup>
 
+<script lang="ts" setup>
 import { ref, onMounted } from 'vue'
 
 import Vditor from 'vditor'
 import 'vditor/dist/index.css'
 
 const editorRef = ref()
-let instance
-
 
 onMounted(() => {
-    init()
+  init()
 })
 
 function init() {
-
-    instance = new Vditor(editorRef.value, {
-        height: "100%",
-        mode: 'ir', // wysiwyg, ir, sv
-        toolbarConfig: {
-            pin: true
-        },
-        cache: {
-            enable: false
-        },
-        after: () => {
-            // instance.setValue(props.content)
-        },
-        // 这里写上传
-        upload: {
-        }
-    })
+  new Vditor(editorRef.value, {
+    height: '100%',
+    mode: 'ir', // wysiwyg, ir, sv
+    toolbarConfig: {
+      pin: true
+    },
+    cache: {
+      enable: false
+    },
+    after: () => {
+      // instance.setValue(props.content)
+    },
+    // 这里写上传
+    upload: {}
+  })
 }
-
 </script>
-  
 
 <style lang="scss" scoped>
 .note {
-    @apply h-full flex-1;
+  @apply h-full flex-1 border-b-0;
 }
 </style>

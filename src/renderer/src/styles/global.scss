@@ -12,13 +12,10 @@ body {
 // 自动移滚动条样式
 ::-webkit-scrollbar {
   width: 5px;
-  height: 1px;
 }
 
 // 滑块部分
 ::-webkit-scrollbar-thumb {
-  // border-radius: 1em;
-  // background-color: rgba(50, 50, 50, 0.3);
   border-radius: 10px;
   background-color: skyblue;
   background-image: -webkit-linear-gradient(
