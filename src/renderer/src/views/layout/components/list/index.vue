@@ -30,9 +30,15 @@ onMounted(() => {
       </div>
     </div>
 
-    <q-virtual-scroll v-slot="{ index }" class="row-box" :items="data.heavyList" separator>
+    <q-virtual-scroll v-slot="{ index }" class="row-box" :items="data.heavyList">
       <q-item :key="index" dense>
-        <div class="row-item">{{ index }}</div>
+        <div class="row-item">
+          <div class="title">测试标题{{ index }}</div>
+          <div class="details">
+            <div class="time">2023.01.01</div>
+            <div class="size">3.2k</div>
+          </div>
+        </div>
       </q-item>
     </q-virtual-scroll>
   </div>
@@ -43,7 +49,7 @@ onMounted(() => {
   @apply flex flex-col h-full w-full border-l-[1px];
 
   .search-box {
-    @apply flex justify-center items-center h-[65px] p-[5px];
+    @apply flex justify-center items-center h-[60px] p-[5px];
 
     .search {
       @apply w-[222px] h-[30px] flex items-center rounded-md border-[1px] border-[#f4f6f7] bg-[#f4f6f7] pl-1 pr-1 duration-500;
@@ -63,10 +69,22 @@ onMounted(() => {
   }
 
   .row-box {
-    @apply flex-1 p-[5px] overflow-y-hidden hover:overflow-y-auto;
+    @apply flex-1 p-[5px] overflow-hidden hover:overflow-y-auto;
 
     .row-item {
-      @apply w-full h-[120px] bg-white;
+      @apply flex flex-col justify-between w-full h-[70px] px-[5px] py-[13px] border-b-[1px] border-[#f1f3f5] hover:bg-[#f4f6f7] rounded-sm;
+
+      .title {
+        @apply text-[15px] font-bold;
+      }
+
+      .details {
+        @apply flex justify-between;
+      }
+    }
+
+    :deep(.q-item) {
+      @apply p-0;
     }
   }
 
