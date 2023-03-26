@@ -1,7 +1,6 @@
 import _ from 'lodash'
 import { App } from 'vue'
 import setupPinia from './pinia'
-import setupElementPlus from './elementplus'
 import setupIconPark from './iconpark'
 import setupQuasar from './quasar'
 
@@ -21,6 +20,5 @@ export const setupPlugins = (app: App): void => {
   autoRegisterComponet(app)
   setupPinia(app)
   setupIconPark(app)
-  setupElementPlus(app)
   setupQuasar(app)
 }
