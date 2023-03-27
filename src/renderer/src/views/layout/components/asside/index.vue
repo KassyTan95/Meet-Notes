@@ -1,4 +1,5 @@
-.<template>
+.
+<template>
   <div class="flex flex-col items-center asside">
     <div class="flex items-center justify-center h-12 avatar">
       <me theme="filled" size="40" fill="#333" :stroke-width="3" />
@@ -38,7 +39,6 @@
 </template>
 
 <script lang="ts" setup>
-
 function new_file() {
   console.log('asdfsdf')
 }
