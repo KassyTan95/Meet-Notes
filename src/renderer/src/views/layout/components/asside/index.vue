@@ -11,7 +11,24 @@
 
     <div class="flex flex-col items-center side-button-group">
       <div class="button-group-item-active button-group-item" @click="new_file">
-        <plus theme="outline" size="20" fill="#fff" :stroke-width="5" />
+        <plus theme="outline" size="20" fill="#fff" :stroke-width="5" @click="show_tooltip = false" />
+        <q-tooltip v-model="show_tooltip" class="tooltip" anchor="center right" self="center left"> 新建 </q-tooltip>
+        <q-menu anchor="top right" self="top left" :offset="[10, 0]">
+          <q-list style="min-width: 100px">
+            <q-item v-close-popup clickable>
+              <q-item-section class="!flex !flex-row !justify-start items-center">
+                <file-addition theme="filled" size="28" fill="#333" />
+                <div class="ml-0.5">空白文档</div>
+              </q-item-section>
+            </q-item>
+            <q-item v-close-popup clickable>
+              <q-item-section class="!flex !flex-row items-center !justify-start">
+                <folder-plus theme="filled" size="28" fill="#333" />
+                <div class="ml-0.5">新建文件夹</div>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-menu>
       </div>
       <div class="button-group-item">
         <calendar theme="outline" size="16" fill="#333" :stroke-width="3" />
@@ -39,6 +56,10 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
+
+const show_tooltip = ref(false)
+
 function new_file() {
   console.log('asdfsdf')
 }
@@ -65,5 +86,10 @@ function new_file() {
         hover:bg-green-600;
     }
   }
+}
+.plus-pop {
+  width: 500px;
+  height: 500px;
+  background-color: #000;
 }
 </style>
