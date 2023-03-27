@@ -70,6 +70,9 @@ onMounted(() => {
 
   .row-box {
     @apply flex-1 p-[5px] overflow-hidden hover:overflow-y-auto;
+    &:hover {
+      overflow-y: overlay;
+    }
 
     .row-item {
       @apply flex flex-col justify-between w-full h-[70px] px-[5px] py-[13px] border-b-[1px] border-[#f1f3f5] hover:bg-[#f4f6f7] rounded-sm;
