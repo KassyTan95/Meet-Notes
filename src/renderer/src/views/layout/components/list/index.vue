@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ListData } from '@renderer/types/layout/list.js'
+import { ListData } from '@renderer/types/layout/list'
 import { onMounted, reactive } from 'vue'
 
 const data = reactive<ListData>({
