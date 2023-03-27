@@ -46,13 +46,13 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .list-box {
-  @apply flex flex-col h-full w-full border-l-[1px];
+  @apply flex flex-col h-full w-[310px] border-l-[1px];
 
   .search-box {
     @apply flex justify-center items-center h-[60px] p-[5px];
 
     .search {
-      @apply w-[222px] h-[30px] flex items-center rounded-md border-[1px] border-[#f4f6f7] bg-[#f4f6f7] pl-1 pr-1 duration-500;
+      @apply w-[222px] h-[30px] flex items-center rounded-md border-[1px] border-[#f4f6f7] bg-[#f4f6f7] px-1 duration-500;
 
       input {
         @apply w-full text-[12px] text-gray-500 bg-[#f4f6f7] ml-0.5;
@@ -75,7 +75,7 @@ onMounted(() => {
     }
 
     .row-item {
-      @apply flex flex-col justify-between w-full h-[70px] px-[5px] py-[13px] border-b-[1px] border-[#f1f3f5] hover:bg-[#f4f6f7] rounded-sm;
+      @apply flex flex-col justify-between w-full h-[70px] px-[5px] py-[13px] border-b-[1px] border-[#f1f3f5] cursor-pointer hover:bg-[#f4f6f7] rounded-sm;
 
       .title {
         @apply text-[15px] font-bold;

@@ -38,7 +38,7 @@ import Footer from '@renderer/views/layout/components/footer/index.vue'
       height: calc(100vh - 25px);
 
       .list {
-        @apply w-[315px] h-full;
+        @apply w-[310px] h-full;
       }
 
       .content {

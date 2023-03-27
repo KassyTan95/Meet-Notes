@@ -1,5 +1,15 @@
 <template>
-  <div class="note" ref="editorRef"></div>
+  <div class="note-box">
+    <div class="title-box">
+      <div class="title">测试标题</div>
+      <div class="operation">
+        <share-one class="icon" />
+        <find class="icon" />
+        <more class="icon" />
+      </div>
+    </div>
+    <div ref="editorRef" class="note"></div>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -34,7 +44,27 @@ function init() {
 </script>
 
 <style lang="scss" scoped>
-.note {
-  @apply h-full flex-1 border-b-0;
+.note-box {
+  @apply flex flex-col h-full border-l-[1px] border-gray-200;
+
+  .title-box {
+    @apply flex items-center justify-between h-[60px] border-b-[1px] px-2 border-gray-200;
+
+    .title {
+      @apply text-[20px] font-bold;
+    }
+
+    .operation {
+      @apply flex;
+
+      .icon {
+        @apply text-[16px] ml-1 cursor-pointer;
+      }
+    }
+  }
+
+  .note {
+    @apply flex-1 border-0;
+  }
 }
 </style>
