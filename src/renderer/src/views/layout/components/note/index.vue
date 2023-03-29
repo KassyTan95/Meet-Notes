@@ -37,7 +37,7 @@ function init() {
     tab: '\t',
     typewriterMode: true, // 是否启用打字机模式
     value: '', // 初始化值
-    placeholder: '...',
+    placeholder: '',
     // cdn: '', // 自建cdn地址
     debugger: true, // 是否显示日志
     // undoDelay: 1, // 历史记录间隔
