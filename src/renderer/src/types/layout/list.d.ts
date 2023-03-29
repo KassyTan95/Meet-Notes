@@ -1,5 +1,6 @@
 interface ListData {
   isFocus: boolean
+  activeItem: number | null
   heavyList: HeavyList[]
 }
 

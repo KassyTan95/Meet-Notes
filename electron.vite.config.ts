@@ -24,6 +24,14 @@ export default defineConfig({
       quasar({
         sassVariables: '@renderer/styles/quasar-variables.sass'
       })
-    ]
+    ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@renderer/styles/variables.scss";',
+          javascriptEnabled: true
+        }
+      }
+    }
   }
 })
