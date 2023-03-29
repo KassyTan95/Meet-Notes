@@ -4,6 +4,7 @@ import { onMounted, reactive } from 'vue'
 
 const data = reactive<ListData>({
   isFocus: false,
+  activeItem: null,
   heavyList: []
 })
 
@@ -32,7 +33,7 @@ onMounted(() => {
 
     <q-virtual-scroll v-slot="{ index }" class="row-box" :items="data.heavyList">
       <q-item :key="index" dense>
-        <div class="row-item">
+        <div class="row-item" :class="{ active: index === data.activeItem }" @click="data.activeItem = index">
           <div class="title">测试标题{{ index }}</div>
           <div class="details">
             <div class="time">2023.01.01</div>
@@ -47,12 +48,14 @@ onMounted(() => {
 <style lang="scss" scoped>
 .list-box {
   @apply flex flex-col h-full w-[310px] border-l-[1px];
+  border-color: $global_border_color;
 
   .search-box {
     @apply flex justify-center items-center h-[60px] p-[5px];
 
     .search {
-      @apply w-[222px] h-[30px] flex items-center rounded-md border-[1px] border-[#f4f6f7] bg-[#f4f6f7] px-1 duration-500;
+      @apply w-[222px] h-[30px] flex items-center rounded-md border-[1px] bg-[#f4f6f7] px-1 duration-300;
+      border-color: $global_border_color;
 
       input {
         @apply w-full text-[12px] text-gray-500 bg-[#f4f6f7] ml-0.5;
@@ -60,7 +63,7 @@ onMounted(() => {
     }
 
     .active {
-      @apply border-[1px] border-[#6588f6] duration-700;
+      @apply border-[1px] border-[#6588f6] duration-500;
     }
 
     .sort {
@@ -75,7 +78,8 @@ onMounted(() => {
     }
 
     .row-item {
-      @apply flex flex-col justify-between w-full h-[70px] px-[5px] py-[13px] border-b-[1px] border-[#f1f3f5] cursor-pointer hover:bg-[#f4f6f7] rounded-sm;
+      @apply flex flex-col justify-between w-full h-[70px] px-[5px] py-[13px] border-b-[1px] cursor-pointer hover:bg-[#f4f6f7] rounded-sm;
+      border-color: $global_border_color;
 
       .title {
         @apply text-[15px] font-bold;
@@ -88,6 +92,10 @@ onMounted(() => {
 
     :deep(.q-item) {
       @apply p-0;
+    }
+
+    .active {
+      @apply bg-[#f4f6f7] rounded-sm;
     }
   }
 
