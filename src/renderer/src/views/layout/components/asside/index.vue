@@ -2,11 +2,11 @@
 <template>
   <div class="flex flex-col items-center asside">
     <div class="flex items-center justify-center h-12 avatar">
-      <me theme="filled" size="40" fill="#333" :stroke-width="3" />
+      <me theme="filled" size="40" :stroke-width="3" />
     </div>
 
-    <div class="flex items-center justify-center refresh">
-      <refresh theme="outline" size="16" fill="#333" :stroke-width="3" />
+    <div class="flex items-center justify-center refresh" @click="$q.dark.toggle">
+      <refresh theme="outline" fill="#333" size="16" :stroke-width="3" />
     </div>
 
     <div class="flex flex-col items-center side-button-group">
@@ -31,25 +31,25 @@
         </q-menu>
       </div>
       <div class="button-group-item">
-        <calendar theme="outline" size="16" fill="#333" :stroke-width="3" />
+        <calendar theme="outline" size="16" :stroke-width="3" />
       </div>
       <div class="button-group-item">
-        <check-one theme="outline" size="16" fill="#333" :stroke-width="3" />
+        <check-one theme="outline" size="16" :stroke-width="3" />
       </div>
       <div class="button-group-item">
-        <high-speed-rail theme="outline" size="16" fill="#333" :stroke-width="3" />
+        <high-speed-rail theme="outline" size="16" :stroke-width="3" />
       </div>
       <div class="button-group-item">
-        <application-menu theme="outline" size="16" fill="#333" :stroke-width="3" />
+        <application-menu theme="outline" size="16" :stroke-width="3" />
       </div>
       <div class="button-group-item">
-        <document-folder theme="outline" size="16" fill="#333" :stroke-width="3" />
+        <document-folder theme="outline" size="16" :stroke-width="3" />
       </div>
       <div class="button-group-item">
-        <share-two theme="outline" size="16" fill="#333" :stroke-width="3" />
+        <share-two theme="outline" size="16" :stroke-width="3" />
       </div>
       <div class="button-group-item">
-        <recycle-bin theme="outline" size="16" fill="#333" :stroke-width="3" />
+        <recycle-bin theme="outline" size="16" :stroke-width="3" />
       </div>
     </div>
   </div>
@@ -57,9 +57,9 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-
+import { useQuasar } from 'quasar'
+const $q = useQuasar()
 const show_tooltip = ref(false)
-
 function new_file() {
   console.log('asdfsdf')
 }
@@ -68,17 +68,20 @@ function new_file() {
 <style lang="scss" scoped>
 .asside {
   @apply w-[75px] h-screen;
+
   .avatar {
     @apply w-full;
   }
   .refresh {
-    @apply h-[40px] w-[40px] bg-gray-100 rounded-sm;
+    @apply h-[40px] w-[40px] bg-gray-300 rounded-sm cursor-pointer;
   }
   .side-button-group {
+    :hover {
+      @apply text-green-700;
+    }
     .button-group-item {
       @apply h-[40px] w-[40px] flex items-center justify-center my-1 rounded-sm
-        hover:bg-gray-100	bg-opacity-100 cursor-pointer
-        active:bg-green-700;
+        hover:bg-gray-300	bg-opacity-100 cursor-pointer;
     }
 
     .button-group-item-active {
