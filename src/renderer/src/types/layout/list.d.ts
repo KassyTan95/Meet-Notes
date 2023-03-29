@@ -1,6 +1,5 @@
 interface ListData {
   isFocus: boolean
-  activeItem: number | null
   heavyList: HeavyList[]
 }
 
@@ -8,4 +7,8 @@ interface HeavyList {
   label: string
 }
 
-export type { ListData }
+interface storeData {
+  selectedItem: null | number
+}
+
+export type { ListData, storeData }

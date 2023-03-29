@@ -27,7 +27,8 @@ const openBrowser = (url: string): void => window.api.openExt(url)
 
 <style lang="scss" scoped>
 .footer-box {
-  @apply flex items-center justify-between  w-full h-full border-t-[1px] border-l-[1px] border-gray-200 text-[12.5px] text-[#868686] font-semibold pl-1 pr-1 shadow-xl;
+  @apply flex items-center justify-between  w-full h-full border-t-[1px] border-l-[1px] text-[12.5px] text-[#868686] font-semibold pl-1 pr-1 shadow-xl;
+  border-color: $global_border_color;
 
   .left {
     @apply flex;

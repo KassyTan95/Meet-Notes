@@ -105,10 +105,12 @@ function init() {
 
 <style lang="scss" scoped>
 .note-box {
-  @apply flex flex-col h-full border-l-[1px] border-gray-200;
+  @apply flex flex-col h-full border-l-[1px];
+  border-color: $global_border_color;
 
   .title-box {
     @apply flex items-center justify-between h-[60px] border-b-[1px] px-2 border-gray-200;
+    border-color: $global_border_color;
 
     .title {
       @apply text-[20px] font-bold;

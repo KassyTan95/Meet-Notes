@@ -1,12 +1,14 @@
 <script lang="ts" setup>
 import { ListData } from '@renderer/types/layout/list'
+import listStore from '@renderer/store/listStore'
 import { onMounted, reactive } from 'vue'
 
 const data = reactive<ListData>({
   isFocus: false,
-  activeItem: null,
   heavyList: []
 })
+
+const store = listStore()
 
 const maxSize = 100
 
@@ -33,7 +35,7 @@ onMounted(() => {
 
     <q-virtual-scroll v-slot="{ index }" class="row-box" :items="data.heavyList">
       <q-item :key="index" dense>
-        <div class="row-item" :class="{ active: index === data.activeItem }" @click="data.activeItem = index">
+        <div class="row-item" :class="{ active: index === store.selectedItem }" @click="store.setSelect(index)">
           <div class="title">测试标题{{ index }}</div>
           <div class="details">
             <div class="time">2023.01.01</div>
@@ -78,7 +80,7 @@ onMounted(() => {
     }
 
     .row-item {
-      @apply flex flex-col justify-between w-full h-[70px] px-[5px] py-[13px] border-b-[1px] cursor-pointer hover:bg-[#f4f6f7] rounded-sm;
+      @apply flex flex-col justify-between w-full h-[70px] px-[10px] py-[13px] border-b-[1px] cursor-pointer hover:bg-[#f4f6f7] rounded-sm;
       border-color: $global_border_color;
 
       .title {
