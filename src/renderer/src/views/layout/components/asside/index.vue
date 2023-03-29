@@ -3,6 +3,52 @@
   <div class="flex flex-col items-center asside">
     <div class="flex items-center justify-center h-12 avatar">
       <me theme="filled" size="40" :stroke-width="3" />
+      <q-menu :offset="[-10, -40]">
+        <q-list style="min-width: 100px">
+          <q-item v-close-popup clickable>
+            <q-item-section class="!flex !flex-row !justify-start items-center">
+              <user theme="filled" />
+              <div class="ml-0.5">个人信息</div>
+            </q-item-section>
+          </q-item>
+          <q-item v-close-popup clickable>
+            <q-item-section class="!flex !flex-row !justify-start items-center">
+              <laptop-computer theme="outline" />
+              <div class="ml-0.5">账号信息</div>
+            </q-item-section>
+          </q-item>
+          <q-item v-close-popup clickable>
+            <q-item-section class="!flex !flex-row items-center !justify-start">
+              <helpcenter theme="outline" />
+              <div class="ml-0.5">帮助与反馈</div>
+            </q-item-section>
+          </q-item>
+          <q-item v-close-popup clickable>
+            <q-item-section class="!flex !flex-row items-center !justify-start">
+              <arrow-circle-up theme="outline" />
+              <div class="ml-0.5">检查更新</div>
+            </q-item-section>
+          </q-item>
+          <q-item v-close-popup clickable>
+            <q-item-section class="!flex !flex-row items-center !justify-start">
+              <info theme="outline" />
+              <div class="ml-0.5">关于我们</div>
+            </q-item-section>
+          </q-item>
+          <q-item v-close-popup clickable>
+            <q-item-section class="!flex !flex-row items-center !justify-start">
+              <setting-one theme="outline" />
+              <div class="ml-0.5">设置</div>
+            </q-item-section>
+          </q-item>
+          <q-item v-close-popup clickable>
+            <q-item-section class="!flex !flex-row items-center !justify-start">
+              <logout theme="outline" />
+              <div class="ml-0.5">退出登录</div>
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </q-menu>
     </div>
 
     <div class="flex items-center justify-center refresh" @click="$q.dark.toggle">
@@ -60,6 +106,7 @@ import { ref } from 'vue'
 import { useQuasar } from 'quasar'
 const $q = useQuasar()
 const show_tooltip = ref(false)
+
 function new_file() {
   console.log('asdfsdf')
 }
