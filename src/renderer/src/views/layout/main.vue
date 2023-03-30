@@ -2,14 +2,14 @@
   <main class="main">
     <Setting />
 
-    <q-splitter v-model="splitterModel" class="flex-1" :limits="[3, 50]">
+    <q-splitter v-model="splitterModel" class="flex-1" unit="px" :limits="[75, 300]">
       <template #before>
         <Asside />
       </template>
 
       <template #after>
         <div class="content-box">
-          <q-splitter v-model="insideModel" class="body" :limits="[15, 30]">
+          <q-splitter v-model="insideModel" class="body" unit="px" :limits="[375, 800]">
             <template #before>
               <div class="list">
                 <List />
@@ -40,8 +40,8 @@ import Note from '@renderer/views/layout/components/note/index.vue'
 import Footer from '@renderer/views/layout/components/footer/index.vue'
 import Setting from '@renderer/views/layout/components/setting/index.vue'
 
-const splitterModel = ref(10)
-const insideModel = ref(10)
+const splitterModel = ref(75)
+const insideModel = ref(375)
 </script>
 
 <style lang="scss" scoped>
