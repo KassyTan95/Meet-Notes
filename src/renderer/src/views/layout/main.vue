@@ -1,29 +1,47 @@
 <template>
   <main class="main">
-    <Asside />
+    <Setting />
 
-    <div class="content-box">
-      <div class="body">
-        <div class="list">
-          <List />
-        </div>
-        <div class="content">
-          <Note />
-        </div>
-      </div>
+    <q-splitter v-model="splitterModel" class="flex-1" :limits="[3, 50]">
+      <template #before>
+        <Asside />
+      </template>
 
-      <div class="footer">
-        <Footer />
-      </div>
-    </div>
+      <template #after>
+        <div class="content-box">
+          <q-splitter v-model="insideModel" class="body" :limits="[15, 30]">
+            <template #before>
+              <div class="list">
+                <List />
+              </div>
+            </template>
+
+            <template #after>
+              <div class="content">
+                <Note />
+              </div>
+            </template>
+          </q-splitter>
+
+          <div class="footer">
+            <Footer />
+          </div>
+        </div>
+      </template>
+    </q-splitter>
   </main>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import Asside from '@renderer/views/layout/components/asside/index.vue'
 import List from '@renderer/views/layout/components/list/index.vue'
 import Note from '@renderer/views/layout/components/note/index.vue'
 import Footer from '@renderer/views/layout/components/footer/index.vue'
+import Setting from '@renderer/views/layout/components/setting/index.vue'
+
+const splitterModel = ref(10)
+const insideModel = ref(10)
 </script>
 
 <style lang="scss" scoped>
@@ -38,11 +56,11 @@ import Footer from '@renderer/views/layout/components/footer/index.vue'
       height: calc(100vh - 25px);
 
       .list {
-        @apply w-[310px] h-full;
+        @apply w-full h-full;
       }
 
       .content {
-        @apply w-full;
+        @apply w-full h-full;
       }
     }
 

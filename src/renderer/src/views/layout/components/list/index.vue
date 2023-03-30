@@ -49,7 +49,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .list-box {
-  @apply flex flex-col h-full w-[310px] border-l-[1px];
+  @apply flex flex-col h-full w-full border-l-[1px];
   border-color: $global_border_color;
 
   .search-box {
