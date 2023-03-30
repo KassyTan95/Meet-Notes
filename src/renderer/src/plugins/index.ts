@@ -11,7 +11,11 @@ import setupQuasar from './quasar'
 const autoRegisterComponet = (app: App): void => {
   const components: Record<string, any> = import.meta.glob('../components/**/*.vue', { eager: true })
   Object.keys(components).forEach((key) => {
-    const name = key.split('/').pop()?.split('.').shift() as string
+    const nameArr = key.split('/')
+    let name = nameArr.pop()?.split('.').shift() as string
+    if (name === 'index') {
+      name = nameArr.pop()!
+    }
     app.component(_.camelCase(name), components[key].default)
   })
 }
