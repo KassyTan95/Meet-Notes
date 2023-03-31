@@ -9,7 +9,7 @@
 
       <template #after>
         <div class="content-box">
-          <q-splitter v-model="insideModel" class="body" unit="px" :limits="[375, 800]">
+          <q-splitter v-model="insideModel" class="body" unit="px" :limits="[300, 800]">
             <template #before>
               <div class="list">
                 <List />
@@ -40,8 +40,8 @@ import Note from '@renderer/views/layout/components/note/index.vue'
 import Footer from '@renderer/views/layout/components/footer/index.vue'
 import Setting from '@renderer/views/layout/components/setting/index.vue'
 
-const splitterModel = ref(75)
-const insideModel = ref(375)
+const splitterModel = ref<number>(75)
+const insideModel = ref<number>(300)
 </script>
 
 <style lang="scss" scoped>
@@ -67,6 +67,10 @@ const insideModel = ref(375)
     .footer {
       @apply flex-1;
     }
+  }
+
+  :deep(.q-splitter__separator) {
+    width: 0;
   }
 }
 </style>
