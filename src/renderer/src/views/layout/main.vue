@@ -2,14 +2,14 @@
   <main class="main">
     <Setting />
 
-    <q-splitter v-model="splitterModel" class="flex-1" unit="px" :limits="[75, 300]">
+    <q-splitter v-model="splitterModel" class="flex-1" unit="px" :limits="[75, 100]">
       <template #before>
         <Asside />
       </template>
 
       <template #after>
         <div class="content-box">
-          <q-splitter v-model="insideModel" class="body" unit="px" :limits="[300, 800]">
+          <q-splitter v-model="insideModel" class="body" unit="px" :limits="[300, 500]">
             <template #before>
               <div class="list">
                 <List />

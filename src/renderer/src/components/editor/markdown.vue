@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<Props>(), {
   placeholder: ''
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'onFocus', 'onBlur', 'onEsc', 'onCtrlEnter', 'onSelect'])
 
 const editorRef = ref()
 const vditor = ref<Vditor | null>(null)
@@ -85,24 +85,29 @@ const init = () => {
       // 渲染完成回调
       // instance.setValue(props.content)
     },
-    input: (value) => {
+    input: (value: string) => {
       // 输入后触发
       emit('update:modelValue', value)
     },
-    focus: () => {
+    focus: (value: string): void => {
       // 编辑器聚焦后触发
+      emit('onFocus', value)
     },
-    blur: () => {
+    blur: (value: string): void => {
       // 失焦后触发
+      emit('onBlur', value)
     },
-    esc: () => {
+    esc: (value: string): void => {
       // 按下esc触发
+      emit('onEsc', value)
     },
-    ctrlEnter: () => {
+    ctrlEnter: (value: string): void => {
       // 按下ctrl + enter后触发
+      emit('onCtrlEnter', value)
     },
-    select: () => {
+    select: (value: string): void => {
       // 选中文字后触发
+      emit('onSelect', value)
     },
     upload: {
       // 上传处理 https://ld246.com/article/1549638745630#options-upload

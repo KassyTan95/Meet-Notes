@@ -1,6 +1,6 @@
 <template>
   <div class="note-box">
-    <div class="title-box">
+    <div class="title-box titlebar-drag">
       <div class="title">测试标题</div>
       <div class="operation">
         <share-one class="icon" />
@@ -27,7 +27,7 @@ const mdValue = ref<string>('')
   border-color: $global_border_color;
 
   .title-box {
-    @apply flex items-center justify-between h-[60px] border-b-[1px] px-2 border-gray-200;
+    @apply flex items-center justify-between h-[80px] border-b-[1px] px-2 border-gray-200;
     border-color: $global_border_color;
 
     .title {

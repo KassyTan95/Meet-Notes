@@ -23,8 +23,8 @@ onMounted(() => {
 
 <template>
   <div class="list-box">
-    <div class="search-box">
-      <div class="search" :class="{ active: data.isFocus }">
+    <div class="search-box titlebar-drag">
+      <div class="search titlebar-remove-drag" :class="{ active: data.isFocus }">
         <search class="icon" />
         <input type="text" placeholder="搜索笔记" @focus="data.isFocus = true" @blur="data.isFocus = false" />
       </div>
@@ -53,10 +53,10 @@ onMounted(() => {
   border-color: $global_border_color;
 
   .search-box {
-    @apply flex justify-center items-center h-[60px] p-[5px];
+    @apply flex justify-center items-center h-[75px] p-[5px];
 
     .search {
-      @apply w-[222px] h-[30px] flex items-center rounded-md border-[1px] bg-[#f4f6f7] px-1 duration-300;
+      @apply w-[222px] h-[33px] flex items-center rounded-md border-[1px] bg-[#f4f6f7] px-1 duration-300;
       border-color: $global_border_color;
 
       input {

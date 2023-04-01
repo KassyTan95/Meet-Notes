@@ -36,3 +36,13 @@ body {
   // background: #ededed;
   border-radius: 10px;
 }
+
+.titlebar-drag {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}
+
+.titlebar-remove-drag {
+  -webkit-user-select: text;
+  -webkit-app-region: no-drag;
+}
