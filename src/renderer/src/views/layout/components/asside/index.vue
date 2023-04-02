@@ -1,4 +1,3 @@
-.
 <template>
   <div class="flex flex-col items-center asside titlebar-drag">
     <div class="flex items-center justify-center h-12 avatar">
@@ -58,7 +57,7 @@
     <div class="flex flex-col items-center side-button-group">
       <div class="button-group-item-active button-group-item" @click="new_file">
         <plus theme="outline" size="20" fill="#fff" :stroke-width="5" @click="show_tooltip = false" />
-        <q-tooltip v-model="show_tooltip" class="tooltip" anchor="center right" self="center left"> 新建 </q-tooltip>
+        <q-tooltip v-model="show_tooltip" class="tooltip" anchor="center right" self="center left"> 新建</q-tooltip>
         <q-menu anchor="top right" self="top left" :offset="[10, 0]">
           <q-list style="min-width: 100px">
             <q-item v-close-popup clickable>
@@ -104,6 +103,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useQuasar } from 'quasar'
+
 const $q = useQuasar()
 const show_tooltip = ref(false)
 
@@ -119,24 +119,28 @@ function new_file() {
   .avatar {
     @apply w-full;
   }
+
   .refresh {
     @apply h-[40px] w-[40px] bg-gray-300 rounded-sm cursor-pointer;
   }
+
   .side-button-group {
     :hover {
       @apply text-green-700;
     }
+
     .button-group-item {
       @apply h-[40px] w-[40px] flex items-center justify-center my-1 rounded-sm
-        hover:bg-gray-300	bg-opacity-100 cursor-pointer;
+      hover:bg-gray-300  bg-opacity-100 cursor-pointer;
     }
 
     .button-group-item-active {
       @apply bg-green-700
-        hover:bg-green-600;
+      hover:bg-green-600;
     }
   }
 }
+
 .plus-pop {
   width: 500px;
   height: 500px;
