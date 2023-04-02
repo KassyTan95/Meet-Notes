@@ -20,7 +20,12 @@ function createWindow(): void {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false
     },
-    titleBarStyle: 'hidden'
+    titleBarStyle: 'hidden',
+    titleBarOverlay: {
+      color: '#ffffff',
+      symbolColor: '#00000',
+      height: 20
+    }
   })
 
   if (is.dev) mainWindow.webContents.openDevTools()

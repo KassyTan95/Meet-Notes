@@ -23,7 +23,7 @@ const mdValue = ref<string>('')
 
 <style lang="scss" scoped>
 .note-box {
-  @apply flex flex-col h-full border-l-[1px];
+  @apply flex flex-col h-full border-l-[1px] pt-[12px];
   border-color: $global_border_color;
 
   .title-box {
