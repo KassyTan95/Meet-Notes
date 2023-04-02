@@ -23,8 +23,7 @@ function createWindow(): void {
     titleBarStyle: 'hidden',
     titleBarOverlay: {
       color: '#ffffff',
-      symbolColor: '#00000',
-      height: 20
+      symbolColor: '#00000'
     }
   })
 

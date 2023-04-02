@@ -8,5 +8,6 @@ declare global {
 
   interface Api {
     openExt: (url: string) => void
+    fromPlatform: () => 'win' | 'mac' | 'linux'
   }
 }

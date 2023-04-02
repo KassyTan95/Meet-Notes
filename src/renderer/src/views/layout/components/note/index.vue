@@ -1,5 +1,5 @@
 <template>
-  <div class="note-box">
+  <div class="note-box" :class="{ 'pt-[12px]': platform === 'win' }">
     <div class="title-box titlebar-drag">
       <div class="title">测试标题</div>
       <div class="operation">
@@ -19,11 +19,12 @@ import { ref } from 'vue'
 
 const store = listStore()
 const mdValue = ref<string>('')
+const platform: string = window.api.fromPlatform()
 </script>
 
 <style lang="scss" scoped>
 .note-box {
-  @apply flex flex-col h-full border-l-[1px] pt-[12px];
+  @apply flex flex-col h-full border-l-[1px];
   border-color: $global_border_color;
 
   .title-box {

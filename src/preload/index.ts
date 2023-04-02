@@ -9,6 +9,10 @@ const api = {
    */
   openExt: (url: string): void => {
     shell.openExternal(url)
+  },
+  fromPlatform: (): string => {
+    const platformMap = { darwin: 'mac', win32: 'win', linux: 'linux' }
+    return platformMap[process.platform]
   }
 }
 
