@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center asside titlebar-drag">
+  <div class="flex flex-col items-center asside titlebar-drag" :class="{ 'titlebar-drag': platform !== 'win' }">
     <div class="flex items-center justify-center h-12 avatar">
       <me theme="filled" size="40" :stroke-width="3" />
       <q-menu :offset="[-10, -40]">
@@ -106,6 +106,7 @@ import { useQuasar } from 'quasar'
 
 const $q = useQuasar()
 const show_tooltip = ref(false)
+const platform: string = window.api.fromPlatform()
 
 function new_file() {
   console.log('asdfsdf')
