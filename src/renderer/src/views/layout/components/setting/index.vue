@@ -1,6 +1,6 @@
 <template>
   <q-dialog v-model="alert" no-esc-dismiss no-backdrop-dismiss>
-    <q-layout view="hHh Lpr lff" container style="height: 800px;">
+    <q-layout view="hHh Lpr lff" container style="height: 800px">
       <q-header>
         <q-toolbar>
           <q-toolbar-title>设置</q-toolbar-title>
