@@ -10,6 +10,10 @@ const api = {
   openExt: (url: string): void => {
     shell.openExternal(url)
   },
+  /**
+   * 判断平台
+   * @returns string 'mac' | 'win' | 'linux'
+   */
   fromPlatform: (): string => {
     const platformMap = { darwin: 'mac', win32: 'win', linux: 'linux' }
     return platformMap[process.platform]

@@ -5,7 +5,8 @@ import { onMounted, reactive } from 'vue'
 
 const data = reactive<ListData>({
   isFocus: false,
-  heavyList: []
+  heavyList: [],
+  sort: 'asc'
 })
 
 const store = listStore()
@@ -28,8 +29,22 @@ onMounted(() => {
         <search class="icon" />
         <input type="text" placeholder="搜索笔记" @focus="data.isFocus = true" @blur="data.isFocus = false" />
       </div>
-      <div class="sort">
-        <sort-amount-down class="icon" />
+      <div class="sort titlebar-remove-drag">
+        <sort-one class="cursor-pointer icon" />
+        <q-menu anchor="bottom start" self="top middle" :offset="[10, 10]" class="text-[12px]">
+          <q-item clickable @click="data.sort = 'asc'">
+            <q-item-section>
+              <span>时间正序 <check-one v-show="data.sort === 'asc'" size="10" fill="#489f80" class="pl-[3px]" /></span>
+            </q-item-section>
+          </q-item>
+          <q-item clickable @click="data.sort = 'desc'">
+            <q-item-section>
+              <span>
+                时间倒序 <check-one v-show="data.sort === 'desc'" size="10" fill="#489f80" class="pl-[3px]" />
+              </span>
+            </q-item-section>
+          </q-item>
+        </q-menu>
       </div>
     </div>
 
@@ -70,6 +85,10 @@ onMounted(() => {
 
     .sort {
       @apply ml-1;
+
+      .menu-item {
+        @apply inline-block text-green-500;
+      }
     }
   }
 
