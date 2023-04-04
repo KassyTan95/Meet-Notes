@@ -16,7 +16,8 @@ const maxSize = 100
 onMounted(() => {
   for (let i = 0; i < maxSize; i++) {
     data.heavyList.push({
-      label: 'Option ' + (i + 1)
+      id: i,
+      label: '测试标题' + (i + 1)
     })
   }
 })
@@ -48,10 +49,10 @@ onMounted(() => {
       </div>
     </div>
 
-    <q-virtual-scroll v-slot="{ index }" class="row-box" :items="data.heavyList">
+    <q-virtual-scroll v-slot="{ index, item }" class="row-box" :items="data.heavyList">
       <q-item :key="index" dense>
-        <div class="row-item" :class="{ active: index === store.selectedItem }" @click="store.setSelect(index)">
-          <div class="title">测试标题{{ index }}</div>
+        <div class="row-item" :class="{ active: index === store.id }" @click="store.setSelect(item)">
+          <div class="title">{{ item.label }}</div>
           <div class="details">
             <div class="time">2023.01.01</div>
             <div class="size">3.2k</div>

@@ -1,15 +1,12 @@
 interface ListData {
   isFocus: boolean
-  heavyList: HeavyList[]
+  heavyList: storeData[]
   sort: 'asc' | 'desc'
 }
 
-interface HeavyList {
-  label: string
-}
-
 interface storeData {
-  selectedItem: null | number
+  id: null | number
+  label: string
 }
 
 export type { ListData, storeData }

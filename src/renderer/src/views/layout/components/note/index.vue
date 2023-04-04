@@ -1,14 +1,14 @@
 <template>
   <div class="note-box" :class="{ 'pt-[12px]': platform === 'win' }">
     <div class="title-box titlebar-drag">
-      <div class="title">测试标题</div>
+      <div class="title">{{ store.label }}</div>
       <div class="operation">
         <share-one class="icon" />
         <find class="icon" />
         <more class="icon" />
       </div>
     </div>
-    <markdown v-if="store.selectedItem !== null" v-model="mdValue" height="100%" placeholder="欢迎使用MeetNotes" />
+    <markdown v-if="store.id" v-model="mdValue" height="100%" placeholder="欢迎使用MeetNotes" />
     <empty-page v-else />
   </div>
 </template>

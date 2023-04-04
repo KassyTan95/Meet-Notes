@@ -4,12 +4,14 @@ import { defineStore } from 'pinia'
 export default defineStore('list', {
   state: () => {
     return {
-      selectedItem: null
+      id: null,
+      label: ''
     } as storeData
   },
   actions: {
-    setSelect(val: number) {
-      this.selectedItem = val
+    setSelect(item: storeData) {
+      this.id = item.id
+      this.label = item.label
     }
   }
 })
