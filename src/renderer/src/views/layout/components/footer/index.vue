@@ -10,16 +10,16 @@ const openBrowser = (url: string): void => window.api.openExt(url)
       </div>
 
       <div class="l-item g-pointer hover" @click="openBrowser('mailto:kassyt@126.com')">
-        <span><mail-open class="icon" /> kassyt@126.com </span>
+        <span> <mail-open class="icon" /> kassyt@126.com </span>
       </div>
     </div>
     <div class="right">
       <div class="r-item g-pointer hover">
-        <span> <setting /> 设置 </span>
+        <span> <setting class="icon" /> 设置 </span>
       </div>
 
       <div class="r-item g-pointer hover">
-        <span> <update-rotation /> 检查更新 </span>
+        <span> <arrow-circle-up class="icon" /> 检查更新 </span>
       </div>
     </div>
   </div>
