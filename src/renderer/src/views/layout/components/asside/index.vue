@@ -75,7 +75,7 @@
           </q-list>
         </q-menu>
       </div>
-      <div class="button-group-item">
+      <div class="button-group-item" @click="$router.push('/login')">
         <calendar theme="outline" size="16" :stroke-width="3" />
       </div>
       <div class="button-group-item">
