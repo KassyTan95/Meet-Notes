@@ -1,5 +1,6 @@
 interface loginData {
   tab: 'phone' | 'email'
+  type: 'wechat' | 'form'
   isPwd: boolean
   form: loginForm
 }
