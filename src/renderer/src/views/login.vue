@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
-import { loginData } from '@renderer/types/login'
+import { LoginData } from '@renderer/types/login'
+import { login } from '@renderer/api/access'
 
-const data = reactive<loginData>({
+const data = reactive<LoginData>({
   tab: 'phone',
   type: 'form',
   isPwd: true,
@@ -11,6 +12,12 @@ const data = reactive<loginData>({
     password: ''
   }
 })
+
+// 登录
+const loginSubmit = async () => {
+  const res = await login(data.form)
+  console.log('res', res)
+}
 </script>
 
 <template>
@@ -49,7 +56,7 @@ const data = reactive<loginData>({
               </template>
             </q-input>
 
-            <q-btn color="primary" label="登 录" class="mt-[25px] !w-full" @click="$router.replace('/')" />
+            <q-btn color="primary" label="登 录" class="mt-[25px] !w-full" @click="loginSubmit" />
 
             <div class="opt-btn">
               <div>注册</div>

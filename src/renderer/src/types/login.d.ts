@@ -1,13 +1,18 @@
-interface loginData {
+export interface LoginData {
   tab: 'phone' | 'email'
   type: 'wechat' | 'form'
   isPwd: boolean
-  form: loginForm
+  form: LoginForm
 }
 
-interface loginForm {
+export interface LoginForm {
   username: string | number
   password: string
 }
 
-export type { loginData, loginForm }
+export interface LoginResult {
+  token_type: string
+  expires_in: number
+  access_token: string
+  refresh_token: string
+}
